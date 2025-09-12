@@ -1,69 +1,68 @@
-# React + TypeScript + Vite
+# K-StyleHub Tech Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Mini project menggunakan **TypeScript**, **React**, dan **TanStack Query (React Query)**.  
+Aplikasi ini menampilkan daftar **Brand**, **Product**, dan **Detail Product** dengan dukungan **pagination**.
 
-Currently, two official plugins are available:
+🚀 Preview Project: [https://k-stylehub-techtest.vercel.app/](https://k-stylehub-techtest.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Fitur
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Daftar **Brand** dengan pagination
+- Daftar **Product** per Brand dengan pagination
+- Detail Product
+- Data diambil menggunakan **TanStack useQuery**
+- Komponen UI menggunakan **shadcn/ui**
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 📖 Essay Question
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Props dengan TypeScript
+
+**Props** adalah mekanisme di React untuk mengirimkan data dari parent component ke child component. Dengan TypeScript, kita bisa mendefinisikan tipe Props agar lebih aman, terhindar dari kesalahan runtime, dan mendapat auto-completion.
+
+### 2. Tanstack Query
+
+**TanStack Query** adalah library untuk manajemen data asynchronous di React.
+Fungsi utamanya:
+
+- Fetching data (misalnya dari REST API)
+- Caching data agar tidak refetch setiap render
+- Pagination & infinite queries
+- State management untuk loading, error, success
+
+## 📦 Getting Started
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/45ruL/k-stylehub-techtest
+cd <your-repo>
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Clone Repository
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm install
+# or
+yarn install
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+
+### 3. Env
+
+API dari mock dari mockApi: [https://mockapi.io/](https://mockapi.io/). contoh :
+
+```bash
+VITE_API_URL=https://68c222dbf9928dbf33ed6b0b.mockapi.io/k-hub
+
+```
+
+### 4. Run
+
+```bash
+npm run dev
+
 ```
